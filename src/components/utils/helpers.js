@@ -91,7 +91,7 @@ export function handleFile (setLoading, setUserData, userData) {
       fd.append('avatar', e.target.files[0], e.target.files[0].name)
       try {
         const { data } = await http.post(
-          'https://evening-journey-52428.herokuapp.com/uploadImage',
+          import.meta.env.VITE_url + 'uploadImage',
           fd,
           {
             headers: {
@@ -99,7 +99,6 @@ export function handleFile (setLoading, setUserData, userData) {
             }
           }
         )
-        // http://localhost:3030/uploadImage
         console.log(data)
         setUserData({ ...userData, photo: data })
         setLoading(false)
@@ -154,7 +153,7 @@ export function handledataEdit (
         if (token) {
           try {
             const { data } = await http.post(
-              'http://localhost:3030/updateUser',
+              import.meta.env.VITE_url + 'updateUser',
               editedData,
               {
                 headers: {
@@ -204,10 +203,13 @@ export function handleSubmit (
         toast.error('Invalid Email or Password!')
       } else {
         try {
-          const result = await http.post('http://localhost:3030/register', {
-            email: registerEmail,
-            password: registerPassword
-          })
+          const result = await http.post(
+            import.meta.env.VITE_url + 'register',
+            {
+              email: registerEmail,
+              password: registerPassword
+            }
+          )
           success(setUserData, setIsAuthenticated, setLoading, result)
         } catch (err) {
           console.log(err)
@@ -220,7 +222,7 @@ export function handleSubmit (
         toast.error('Invalid Email or Password!')
       } else {
         try {
-          const result = await http.post('http://localhost:3030/login', {
+          const result = await http.post(import.meta.env.VITE_url + 'login', {
             email: loginEmail,
             password: loginPassword
           })

@@ -22,11 +22,9 @@ export const handleGoogleSignin = (
       )
       console.log(data)
       const result = await http.post(
-        'https://evening-journey-52428.herokuapp.com/google-signin',
+        import.meta.env.VITE_url + 'google-signin',
         data
       )
-      // https://evening-journey-52428.herokuapp.com/
-      // http://localhost:3030/google-signin
       success(setUserData, setIsAuthenticated, setLoading, result)
     } catch (err) {
       toast.error(
@@ -54,7 +52,7 @@ export const ongithubSuccess = (
     setLoading(true)
     try {
       console.log(res.code)
-      const result = await http.post('http://localhost:3030/github-signin', res)
+      const result = await http.post(import.meta.env.VITE_url + 'github-signin', res)
       success(setUserData, setIsAuthenticated, setLoading, result)
     } catch (error) {
       setLoading(false)
@@ -77,7 +75,7 @@ export const handleTwitter = (setUserData, setIsAuthenticated, setLoading) => {
     try {
       const { _tokenResponse } = await signInWithPopup(authentication, provider)
       const res = await http.post(
-        'http://localhost:3030/twitter-signin',
+        import.meta.env.VITE_url + 'twitter-signin',
         _tokenResponse
       )
       console.log(res)
@@ -101,7 +99,7 @@ export const signInWithFacebook = (
     try {
       const { _tokenResponse } = await signInWithPopup(authentication, provider)
       const res = await http.post(
-        'http://localhost:3030/facebook-signin',
+        import.meta.env.VITE_url + 'facebook-signin',
         _tokenResponse
       )
       console.log(res)
