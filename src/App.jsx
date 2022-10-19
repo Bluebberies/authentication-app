@@ -79,9 +79,8 @@ function App() {
           setUserData(result.data);
           setLoading(false);
         } catch (err) {
-          console.log(err);
           setIsAuthenticated(false);
-          navigate('/', { replace: true })
+          navigate("/", { replace: true });
           toast.error("Something failed!");
           setLoading(false);
         }
@@ -92,9 +91,6 @@ function App() {
     };
     reloadData();
   }, []);
-
-  // console.log(import.meta.env.VITE_SOME_KEY) 
-  console.log(import.meta.env) 
 
   return (
     <>

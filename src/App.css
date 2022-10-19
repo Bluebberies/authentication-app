@@ -1,14 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600&display=swap');
 
-* {
-  /* border: 2px solid red; */
-}
-
 body {
   font-family: 'Noto Sans', sans-serif;
   margin: 0;
-  /* height: 100vh;
-  width: 100%; */
 }
 
 .spinner-background {
@@ -25,7 +19,6 @@ body {
 }
 
 .App {
-  /* min-height: 100vh; */
   margin-top: 6rem;
   display: flex;
   flex-direction: column;
@@ -163,7 +156,7 @@ body {
   gap: 15px;
 }
 
-.App .card .alt-login .socials .github-img{
+.App .card .alt-login .socials .github-img {
   background-color: transparent;
   border: none;
   display: flex;
@@ -180,10 +173,6 @@ body {
   height: 2rem;
 }
 
-/* .footer {
-  display: flex;
-} */
-
 .footer p {
   position: absolute;
   bottom: -36px;
@@ -194,11 +183,11 @@ body {
   color: #828282;
 }
 
-.footer p:first-child{
+.footer p:first-child {
   left: 10px;
 }
 
-.footer p:last-child{
+.footer p:last-child {
   right: 10px;
 }
 
@@ -623,7 +612,7 @@ body {
   height: 62px;
 }
 
-.userInfo .holder .edit-inputs .changePhoto .camera img:hover{
+.userInfo .holder .edit-inputs .changePhoto .camera img:hover {
   background-color: red;
   opacity: 0.5;
   cursor: pointer;
@@ -637,7 +626,7 @@ body {
   color: #2c2828;
 }
 
-.userInfo .holder.dark .edit-inputs .changePhoto .camera i{
+.userInfo .holder.dark .edit-inputs .changePhoto .camera i {
   color: rgb(174, 165, 165)
 }
 
@@ -651,7 +640,7 @@ body {
   transition: .5s;
 }
 
-.userInfo .holder .edit-inputs .changePhoto p:hover{
+.userInfo .holder .edit-inputs .changePhoto p:hover {
   font-size: 15px;
 }
 
@@ -737,10 +726,11 @@ body {
 }
 
 @media screen and (max-width: 590px) {
-  .App .card{
+  .App .card {
     padding: 13px 27px;
     max-width: max-content;
   }
+
   .App .card h1.headline {
     font-size: 20px;
     line-height: 20px;
@@ -861,7 +851,7 @@ body {
     border: none;
   }
 
-  .userInfo .info-details .details .data{
+  .userInfo .info-details .details .data {
     padding: 0;
   }
 

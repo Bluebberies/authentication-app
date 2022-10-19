@@ -15,12 +15,10 @@ export const handleGoogleSignin = (
 ) => {
   return async res => {
     setLoading(true)
-    console.log('success:', res.credential)
     try {
       const { data } = await http.get(
         `https://oauth2.googleapis.com/tokeninfo?id_token=${res.credential}`
       )
-      console.log(data)
       const result = await http.post(
         import.meta.env.VITE_url + 'google-signin',
         data
@@ -38,7 +36,6 @@ export const handleGoogleSignin = (
 export function handleGithubSigninClick (setLoading) {
   return renderProps => {
     setLoading(true)
-    console.log('hello')
     renderProps.onClick()
   }
 }
@@ -51,12 +48,10 @@ export const ongithubSuccess = (
   return async res => {
     setLoading(true)
     try {
-      console.log(res.code)
       const result = await http.post(import.meta.env.VITE_url + 'github-signin', res)
       success(setUserData, setIsAuthenticated, setLoading, result)
     } catch (error) {
       setLoading(false)
-      console.log(error)
       toast.warn('Access not granted!. Try login instead')
     }
   }
@@ -78,7 +73,6 @@ export const handleTwitter = (setUserData, setIsAuthenticated, setLoading) => {
         import.meta.env.VITE_url + 'twitter-signin',
         _tokenResponse
       )
-      console.log(res)
       success(setUserData, setIsAuthenticated, setLoading, res)
     } catch (err) {
       setLoading(false)
@@ -102,13 +96,11 @@ export const signInWithFacebook = (
         import.meta.env.VITE_url + 'facebook-signin',
         _tokenResponse
       )
-      console.log(res)
       success(setUserData, setIsAuthenticated, setLoading, res)
     } catch (err) {
       toast.warn(
         'An error occured, Please check your internet connection or Try signin by another means:)'
       )
-      console.log(err)
     }
   }
 }

@@ -99,11 +99,9 @@ export function handleFile (setLoading, setUserData, userData) {
             }
           }
         )
-        console.log(data)
         setUserData({ ...userData, photo: data })
         setLoading(false)
       } catch (err) {
-        console.log(err)
         toast.error('Something failed!')
         setLoading(false)
       }
@@ -161,7 +159,6 @@ export function handledataEdit (
                 }
               }
             )
-            console.log(data)
             setUserData(data)
             setLoading(false)
             toast.success('Updated')
@@ -172,7 +169,6 @@ export function handledataEdit (
             setEditedEmail('')
             setEditedPassword('')
           } catch (err) {
-            console.log(err)
             toast.error(err.response.data)
             setLoading(false)
           }
@@ -212,7 +208,6 @@ export function handleSubmit (
           )
           success(setUserData, setIsAuthenticated, setLoading, result)
         } catch (err) {
-          console.log(err)
           toast.error(err.response.data)
         }
       }
@@ -228,7 +223,6 @@ export function handleSubmit (
           })
           success(setUserData, setIsAuthenticated, setLoading, result)
         } catch (err) {
-          console.log(err)
           toast.error(err.response.data)
         }
       }
