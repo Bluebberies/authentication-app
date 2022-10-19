@@ -71,7 +71,7 @@ function App() {
     const reloadData = async () => {
       if (token) {
         try {
-          const result = await http.get("http://localhost:3030/reload", {
+          const result = await http.get(import.meta.env.VITE_url + "reload", {
             headers: {
               "x-auth-token": token,
             },
