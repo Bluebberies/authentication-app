@@ -1,12 +1,12 @@
-<h1 align="center">My unsplash</h1>
+<h1 align="center">Authentication app</h1>
 
 <div align="center">
   <h3>
-    <a href="https://my-unsplash-client.vercel.app/">
+    <a href="https://authentication-app-theta.vercel.app/">
       Demo
     </a>
     <span> | </span>
-    <a href="https://github.com/Bluebberies/my-unsplash-fullstack-project">
+    <a href="https://github.com/Bluebberies/authentication-app">
       Solution
     </a>
   </h3>
@@ -22,19 +22,20 @@
 
 ## Overview
 
-![screenshot](image1.png)
-![screenshot](image2.png)
-![screenshot](image3.png)
+![screenshot](pic1.png)
+![screenshot](pic2.png)
+![screenshot](pic3.png)
 
 ### Built With
 
 - [React](https://reactjs.org/)
 - [Node](https://Nodejs.org/)
 - [Cloudinary]
+- [mongodb]
 
 ## Features
 
-An unsplash project where you can see a collection of images, update them and delete them
+An app for implementation of basic authentication with Facebook, Twitter, GitHub and Google using their oauth
 
 ## How To Use
 
