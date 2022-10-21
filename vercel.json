@@ -2,6 +2,7 @@
     "rewrites":  [
       {"source": "/profile", "destination": "/"},
       {"source": "/edit", "destination": "/"},
+      {"source": "/login", "destination": "/"},
       {"source": "/(.*)", "destination": "/"}
     ]
 }
